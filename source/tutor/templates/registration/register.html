@@ -1,0 +1,45 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h2>Registration</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Custom label and input for the username -->
+        <div class="form-group">
+            <label for="{{ form.username.id_for_label }}">Custom Username Label:</label>
+            {{ form.username }}
+        </div>
+        
+        <!-- Custom label and input for the email -->
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Custom Email Label:</label>
+            {{ form.email }}
+        </div>
+        
+        <!-- Custom label and input for the password1 -->
+        <div class="form-group">
+            <label for="{{ form.password1.id_for_label }}">Custom Password Label:</label>
+            {{ form.password1 }}
+        </div>
+        
+        <!-- Custom label and input for the password2 -->
+        <div class="form-group">
+            <label for="{{ form.password2.id_for_label }}">Custom Password Confirmation Label:</label>
+            {{ form.password2 }}
+        </div>
+        
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

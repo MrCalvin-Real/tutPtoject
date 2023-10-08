@@ -1,0 +1,17 @@
+{% extends "BASE.html" %}
+
+{% block title %}Video Detail{% endblock %}
+
+{% block content %}
+    <h1>Video Detail</h1>
+    <div class="video-detail">
+        <h2>{{ video.title }}</h2>
+        <p>Uploaded by: {{ video.author.username }}</p>
+        <p>Published on: {{ video.created_at }}</p>
+        <p>Description: {{ video.description }}</p>
+        <video width="640" height="360" controls>
+            <source src="{{ video.video_file.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    {% endblock %}
